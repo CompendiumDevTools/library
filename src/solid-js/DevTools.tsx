@@ -90,7 +90,6 @@ function watchValue(node: Computation, type: "signal" | "node") {
 	Object.defineProperty(node, "value", {
 		get: () => value,
 		set: (newValue) => {
-			debugger;
 			if (id === undefined) {
 				name =
 					type === "signal"
