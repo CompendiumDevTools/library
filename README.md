@@ -1,8 +1,12 @@
 <img src="https://assets.solidjs.com/banner?project=Compendium DevTools Connector" />
 
-A library for connecting frameworks and state management libraries to [Compendium DevTools]() made for SolidHack.
+## ⚠️ This branch of the repo will remain unchanged until the end of SolidHack voting! 
 
-If you're coming from SolidHack, make sure to look at the [Compendium DevTools]() repo as well since it was a large part of this effort.
+## ⚠️ If you would like to see the current progress of this project, please view the [`dev` branch](https://github.com/CompendiumDevTools/library/branches/dev).
+
+A library for connecting frameworks and state management libraries to [Compendium DevTools](https://github.com/CompendiumDevTools/devtools) made for SolidHack.
+
+If you're coming from SolidHack, make sure to look at the [Compendium DevTools](https://github.com/CompendiumDevTools/devtools) repo as well since it was a large part of this effort.
 
 ## Functions
 
