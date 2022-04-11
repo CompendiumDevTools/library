@@ -1,4 +1,4 @@
-<img src="https://assets.solidjs.com/banner?project=Compendium DevTools Connector" />
+<img src="https://assets.solidjs.com/banner?project=Compendium%20DevTools%20Connector" />
 
 ## ⚠️ The `master` branch of the repo will remain unchanged until the end of SolidHack voting! 
 
