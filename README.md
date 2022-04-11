@@ -1,6 +1,6 @@
 <img src="https://assets.solidjs.com/banner?project=Compendium DevTools Connector" />
 
-## ⚠️ This branch of the repo will remain unchanged until the end of SolidHack voting! 
+## ⚠️ The `master` branch of the repo will remain unchanged until the end of SolidHack voting! 
 
 ## ⚠️ If you would like to see the current progress of this project, please view the [`dev` branch](https://github.com/CompendiumDevTools/library/branch/dev).
 
