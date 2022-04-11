@@ -34,6 +34,12 @@ Specific functions for connecting SolidJS projects.
 
 This is a Solid component that will automatically connect everything under it to the devtools. It's best used at the root of your project, but it can be placed anywhere if you want a smaller, more managable scope to view.
 
+```jsx
+<DevTools>
+	<App />
+</DevTools>
+```
+
 ## Building From Source
 
 Current the library is TypeScript only. In the close future it will come to NPM as a package for easy installation. For now, `git clone` the repository into your project and reference it with relative paths. There are no dependencies, so you don't need to run `pnpm i`.
