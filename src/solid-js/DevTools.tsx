@@ -6,7 +6,7 @@ import { NodeID } from "../nodes";
 const DevTools: Component<{ enabled?: boolean }> = (props) => {
 	const root = getOwner() as Computation;
 
-	console.log(root);
+	console.log("Solid Root", root);
 
 	watchNode(root);
 
