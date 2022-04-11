@@ -6,7 +6,7 @@
 
 ## ⚠️ If you're coming from SolidHack, make sure to look at the [Compendium DevTools](https://github.com/CompendiumDevTools/devtools) repo as well since it was a large part of this effort.
 
-This project is a work in progress and might not be usable at the current time.
+## ⚠️ This project is a work in progress and might not be usable at the current time.
 
 A library for connecting frameworks and state management libraries to [Compendium DevTools](https://github.com/CompendiumDevTools/devtools) made for SolidHack.
 
