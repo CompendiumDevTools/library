@@ -6,6 +6,8 @@
 
 ## ⚠️ If you're coming from SolidHack, make sure to look at the [Compendium DevTools](https://github.com/CompendiumDevTools/devtools) repo as well since it was a large part of this effort.
 
+This project is a work in progress and might not be usable at the current time.
+
 A library for connecting frameworks and state management libraries to [Compendium DevTools](https://github.com/CompendiumDevTools/devtools) made for SolidHack.
 
 ## Functions
@@ -31,3 +33,7 @@ Specific functions for connecting SolidJS projects.
 ### `<DevTools />`
 
 This is a Solid component that will automatically connect everything under it to the devtools. It's best used at the root of your project, but it can be placed anywhere if you want a smaller, more managable scope to view.
+
+## Building From Source
+
+Current the library is TypeScript only. In the close future it will come to NPM as a package for easy installation. For now, `git clone` the repository into your project and reference it with relative paths. There are no dependencies, so you don't need to run `pnpm i`.
