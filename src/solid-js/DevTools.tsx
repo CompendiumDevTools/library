@@ -1,7 +1,8 @@
 import { Component, getOwner } from "solid-js";
 import type Computation from "./types/Computation";
 import { registerNode, unregisterNode, updateNode } from "../index";
-import { NodeID } from "../nodes";
+
+// TODO: Figure out how to differentiate between more things than signals and nodes.
 
 const DevTools: Component<{ enabled?: boolean }> = (props) => {
 	const root = getOwner() as Computation;
