@@ -93,17 +93,14 @@ function watchValue(node: Computation, type: "signal" | "node") {
 			if (id === undefined) {
 				name =
 					type === "signal"
-						? node.name
+						? `signal(${node.name})`
 						: node.componentName != null
 						? {
 								open: `<${node.componentName}>`,
 								close: `</${node.componentName}>`,
 						  }
 						: { open: `<${node.name}>`, close: `</${node.name}>` };
-				id = registerNode({
-					name,
-					state: value,
-				});
+				id = registerNode({ name, state: value });
 				node[idSymbol] = id;
 			}
 

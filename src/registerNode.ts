@@ -11,35 +11,43 @@ type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<
 	}[Keys];
 
 export default function registerNode(
-	nodeData: RequireAtLeastOne<NodePoint> & Partial<NodeOptions>
+	point: RequireAtLeastOne<NodePoint>,
+	options: Partial<NodeOptions> = {}
 ): NodeID {
 	// Don't check for duplicate IDs. That's handled by the extension.
 	// If there is an identical ID it should be overwritten.
 	// This is to smoothly handle HMR.
-	const safeNodeData = {
-		...nodeData,
-		id: nodeData.id ?? crypto.randomUUID(),
-		serialize: nodeData.serialize ?? true,
-		trackHistory: nodeData.trackHistory ?? true,
+	const safePoint = {
+		...point,
+	};
+	const safeOptions = {
+		...options,
+		id: options.id ?? crypto.randomUUID(),
+		serialize: options.serialize ?? true,
+		trackHistory: options.trackHistory ?? true,
+		actions: options.actions ?? [],
 	};
 
-	console.log(`Registering node with ID "${safeNodeData.id}".`, safeNodeData);
+	console.log(`Registering node with ID "${safeOptions.id}".`, safeOptions);
 
 	// Save only the options.
-	nodes[safeNodeData.id] = {
-		id: safeNodeData.id,
-		serialize: safeNodeData.serialize,
-		trackHistory: safeNodeData.trackHistory,
+	nodes[safeOptions.id] = {
+		id: safeOptions.id,
+		serialize: safeOptions.serialize,
+		trackHistory: safeOptions.trackHistory,
+		actions: safeOptions.actions,
 	};
 
-	safeNodeData.state = serialize(safeNodeData.state);
+	safePoint.state = serialize(safePoint.state);
 
 	window.postMessage(
-		Object.assign(safeNodeData, {
+		{
 			type: "REGISTER_NODE",
 			source: "compendium-devtools-extension",
-		}),
+			options: safeOptions,
+			point: safePoint,
+		},
 		"*"
 	);
-	return safeNodeData.id;
+	return safeOptions.id;
 }

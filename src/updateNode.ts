@@ -1,9 +1,9 @@
 import stores, { NodeID, NodeOptions, NodePoint } from "./nodes";
 import serialize from "./utils/serialize";
 
-export default function updateNode(id: NodeID, nodeData: Partial<NodePoint>) {
-	const safeNodeData = {
-		...nodeData,
+export default function updateNode(id: NodeID, point: Partial<NodePoint>) {
+	const safePoint = {
+		...point,
 	};
 	const storedNode = stores[id];
 
@@ -13,18 +13,18 @@ export default function updateNode(id: NodeID, nodeData: Partial<NodePoint>) {
 	}
 
 	if (storedNode.serialize) {
-		safeNodeData.state = serialize(
-			nodeData.state,
+		safePoint.state = serialize(
+			point.state,
 			typeof storedNode.serialize === "function"
 				? storedNode.serialize
 				: undefined
 		);
 	}
 
-	console.log(`Updating node with ID "${id}".`, safeNodeData);
+	console.log(`Updating node with ID "${id}".`, safePoint);
 
 	window.postMessage(
-		Object.assign(safeNodeData, {
+		Object.assign(safePoint, {
 			id,
 			type: "UPDATE_NODE",
 			source: "compendium-devtools-extension",
